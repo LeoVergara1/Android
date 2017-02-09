@@ -24,9 +24,9 @@ public class Main2Activity extends AppCompatActivity {
         mText1 = (TextView) findViewById(R.id.txt_suma)
         mtxtS = (TextView) findViewById(R.id.txt_suma)
         SumActivity obj = new SumActivity()
-        Bundle bundle = getIntent().getExtras()
-        dato = bundle.getString("info")
-        mText1.setText(bundle.getString("info"))
+        Bundle bundle = getIntent().getExtras() // Objeto de una clase importada para recibir la informacio
+        dato = bundle.getString("info") // Se asigna la informacion por medio de la llave (key)
+        mText1.setText(bundle.getString("info")) // otra forma de asignar la infromacion directo al Campo de texto
         Intent return1 = new Intent(this, MainActivity.class)
         return1.putExtra("infoR",dato)
 

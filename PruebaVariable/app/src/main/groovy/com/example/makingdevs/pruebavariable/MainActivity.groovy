@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     Button mButtonC
     Button mButtonRe
     TextView mText1
-    String texto
+    String texto // vavriable para interactuar en los envios
     String reInfo
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,14 +24,14 @@ public class MainActivity extends AppCompatActivity {
         mButtonRe = (Button) findViewById(R.id.btn_recu)
         mText1 = (TextView) findViewById(R.id.text1)
         Bundle bundle = getIntent().getExtras()
-        SumActivity obj = new SumActivity()
-        Intent open = new Intent(this,Main2Activity.class)
-        open.putExtra("info",texto)
+        SumActivity obj = new SumActivity() //Objeto instanciado de la clase suma
+        Intent open = new Intent(this,Main2Activity.class) // Se instancia open en la clase Intent de la ventana a abrir
+        open.putExtra("info",texto) // Se manda la informacion
 
 
         mButtonC.onClickListener = {
-            open.putExtra("info",texto)
-            startActivity(open)
+            open.putExtra("info",texto) // Se manda la infromacion
+            startActivity(open) // Se abre la segunda ventana, metodo de la clase Intent
             Toast.makeText(this, "Cambiando de ventana", 3).show()
 
         }
